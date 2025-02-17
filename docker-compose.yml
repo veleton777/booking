@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: build/docker/Dockerfile
+    env_file: ".env"
+    extra_hosts:
+      - proxy-host:host-gateway
+    ports:
+      - "8080:8080"
+    command: ["./app", "http"]

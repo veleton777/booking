@@ -1,0 +1,67 @@
+basePath: /api
+definitions:
+  dto.BookingReq:
+    properties:
+      email:
+        example: user@gmail.com
+        type: string
+      from:
+        example: "2025-04-20"
+        type: string
+      hotel_id:
+        example: "123"
+        type: string
+      room_id:
+        example: "456"
+        type: string
+      to:
+        example: "2025-04-25"
+        type: string
+    required:
+    - email
+    - from
+    - hotel_id
+    - room_id
+    - to
+    type: object
+  httputil.HTTPError:
+    properties:
+      businessCode:
+        type: integer
+      code:
+        type: integer
+      text:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a server Currency API
+  title: Swagger Currency API
+  version: "1.0"
+paths:
+  /v1/booking:
+    post:
+      consumes:
+      - application/json
+      description: Create new booking
+      parameters:
+      - description: BookingReqDTO
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/dto.BookingReq'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httputil.HTTPError'
+      summary: Create new booking
+      tags:
+      - booking
+swagger: "2.0"

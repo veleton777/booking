@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "d6559257-2d79-4d45-9501-ca243b65e632",
+		"name": "booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2474103"
+	},
+	"item": [
+		{
+			"name": "booking",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"hotel_id\": \"hotel_1\",\n    \"room_id\": \"room_1\",\n    \"email\": \"user2@mail.ru\",\n    \"from\": \"2025-04-12\",\n    \"to\": \"2025-04-13\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/booking",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"booking"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
